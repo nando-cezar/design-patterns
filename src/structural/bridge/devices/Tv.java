@@ -1,6 +1,7 @@
 package structural.bridge.devices;
 
 public class Tv implements Device {
+    
     private boolean on = false;
     private int volume = 30;
     private int channel = 1;
