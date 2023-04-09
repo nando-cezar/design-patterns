@@ -1,7 +1,5 @@
 package creational.builder.components;
 
-import java.io.Serializable;
-
-public enum Transmission implements Serializable {
+public enum Transmission {
     SINGLE_SPEED, MANUAL, AUTOMATIC, SEMI_AUTOMATIC;
 }
