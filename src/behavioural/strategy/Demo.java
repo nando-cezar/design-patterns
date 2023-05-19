@@ -13,9 +13,9 @@ import behavioural.strategy.strategies.PayStrategy;
 
 public class Demo {
 
-    private static Map<Integer, Integer> priceOnProducts = new HashMap<>();
-    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    private static Order order = new Order();
+    private static final Map<Integer, Integer> priceOnProducts = new HashMap<>();
+    private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final Order order = new Order();
     private static PayStrategy strategy;
 
     static {
@@ -31,11 +31,13 @@ public class Demo {
 
             String continueChoice;
             do {
-                System.out.print("Please, select a product:" + "\n" +
-                        "1 - Mother board" + "\n" +
-                        "2 - CPU" + "\n" +
-                        "3 - HDD" + "\n" +
-                        "4 - Memory" + "\n");
+                System.out.print("""
+                        Please, select a product:
+                        1 - Mother board
+                        2 - CPU
+                        3 - HDD
+                        4 - Memory
+                        """);
                 int choice = Integer.parseInt(reader.readLine());
                 cost = priceOnProducts.get(choice);
                 System.out.print("Count: ");
@@ -46,9 +48,10 @@ public class Demo {
             } while (continueChoice.equalsIgnoreCase("Y"));
 
             if (strategy == null) {
-                System.out.println("Please, select a payment method:" + "\n" +
-                        "1 - PalPay" + "\n" +
-                        "2 - Credit Card");
+                System.out.println("""
+                        Please, select a payment method:
+                        1 - PalPay
+                        2 - Credit Card""");
                 String paymentMethod = reader.readLine();
 
                 // Client creates different strategies based on input from user,
